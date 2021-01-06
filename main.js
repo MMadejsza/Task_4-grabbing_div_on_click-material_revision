@@ -5,26 +5,28 @@ container.appendChild(square);
 
 let squareX = 150;
 let squareY = 100;
+let squareInsertX;
+let squareInsertY;
 square.style.left = `${squareX}px`;
 square.style.top = `${squareY}px`;
 let drawBrakePoint = false;
 
-square.addEventListener("mousedown", () => {
-    console.log('mouseDown');
+square.addEventListener("mousedown", (event) => {
     square.classList.toggle("squareClicked");
     drawBrakePoint = !drawBrakePoint;
+    squareInsertX = event.offsetX;
+    squareInsertY = event.offsetY;
+
 })
 square.addEventListener("mousemove", (event) => {
-    console.log('mousemove');
     if (drawBrakePoint) {
-        squareX = event.clientX;
-        squareY = event.clientY;
-        square.style.left = `${squareX - 50}px`;
-        square.style.top = `${squareY - 50}px`;
+        squareX = event.clientX - squareInsertX;
+        squareY = event.clientY - squareInsertY;
+        square.style.left = `${squareX}px`;
+        square.style.top = `${squareY}px`;
     }
 })
 square.addEventListener("mouseup", () => {
-    console.log('mouseup');
     square.classList.toggle("squareClicked");
     drawBrakePoint = !drawBrakePoint;
 })
