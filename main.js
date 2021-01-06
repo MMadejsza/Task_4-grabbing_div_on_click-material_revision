@@ -8,19 +8,18 @@ let squareY = 100;
 square.style.left = `${squareX}px`;
 square.style.top = `${squareY}px`;
 
-const mouseDown = () => {
+square.addEventListener("mousedown", () => {
+    console.log('mouseDown');
+    square.classList.toggle("squareClicked");
+})
+square.addEventListener("mousemove", () => {
+    console.log('mousemove');
 
-}
-const mouseMove = () => {
-
-}
-const mouseUp = () => {
-
-}
-
-
-
-
+})
+square.addEventListener("mouseup", () => {
+    console.log('mouseup');
+    square.classList.toggle("squareClicked");
+})
 
 function create(tagName, attributeType, aValue) {
     const tag = document.createElement(tagName);
