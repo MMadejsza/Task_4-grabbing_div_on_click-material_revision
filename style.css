@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1000px;
+}
+
+.square {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+}
+
+.squareClicked {
+    background-color: gray;
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 127px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 127px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 127px -7px rgba(0, 0, 0, 0.75);
+}
