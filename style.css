@@ -9,9 +9,11 @@
 }
 
 .square {
+    position: fixed;
     background-color: black;
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 
 .squareClicked {
